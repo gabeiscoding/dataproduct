@@ -1,0 +1,1 @@
+This shiny app predict the mpg of cars.  user will input the data of cars horse power and weight.  The app will give the prediction of mpg, using r dataset mdcars and simple linear regressions. 

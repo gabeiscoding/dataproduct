@@ -1,0 +1,37 @@
+Predict Mpg of Cars
+========================================================
+author: Qy
+date: 
+
+What apps do 
+========================================================
+
+This project using shiny and R dataset to predict the MPG of cars.  To load the data into R. using:
+```{r}
+data(mtcars)
+df = as.data.frame(mtcars)
+summary(df)
+```
+
+Model
+========================================================
+The model using the following model
+$$ MPG = {\bata}_0 + {\beta}_1 * weight + {\beta}_2 * horsepower $$
+```{r}
+model <- lm(mpg~wt+hp, data=df)
+summary(model)
+```
+
+Error Plot
+========================================================
+
+```{r, echo=FALSE}
+par(mfrow = c(2,2))
+plot(model)
+```
+
+Let's predict
+========================================================
+```{r}
+predict(model, newdata=data.frame(wt=2,hp=134))
+```
